@@ -28,6 +28,18 @@
             else
                 textError.textContent="*needed minimum 3 letters";
         })
+
+        //validating password entered by user
+        const text = document.querySelector('#pwd');
+        const textError = document.querySelector('.pwd-error');
+        text.addEventListener('input', function() {
+            let pwdRegex = RegExp('^[[A-Z]A-Za-z0-9+[$%@_-]{1}]{8,}$');
+            if(pwdRegex.test(text.value))
+                textError.textContent="";
+            else
+                textError.textContent="*needed minimum 8 letters";
+        })
+
     </script>
 
     </body>
