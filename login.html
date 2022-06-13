@@ -17,5 +17,18 @@
         <input type="submit" value="Login">
     </form>
 
+    <script>
+        //validating name entered by user
+        const text = document.querySelector('#user');
+        const textError = document.querySelector('.user-error');
+        text.addEventListener('input', function() {
+            let nameRegex = RegExp('^[A-Za-z]{3,}$');
+            if(nameRegex.test(text.value))
+                textError.textContent="";
+            else
+                textError.textContent="*needed minimum 3 letters";
+        })
+    </script>
+
     </body>
 </html>
